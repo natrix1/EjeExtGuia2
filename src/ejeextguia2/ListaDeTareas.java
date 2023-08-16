@@ -11,6 +11,7 @@ package ejeextguia2;
  */
 public class ListaDeTareas extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form ListaDeTareas
      */
@@ -34,6 +35,7 @@ public class ListaDeTareas extends javax.swing.JFrame {
         jBtareasPendientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         jDPpantalla.setPreferredSize(new java.awt.Dimension(700, 600));
 
@@ -61,21 +63,20 @@ public class ListaDeTareas extends javax.swing.JFrame {
         jDPpantalla.setLayout(jDPpantallaLayout);
         jDPpantallaLayout.setHorizontalGroup(
             jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDPpantallaLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jBcargarTarea)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
             .addGroup(jDPpantallaLayout.createSequentialGroup()
                 .addGroup(jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDPpantallaLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jBcargarTarea)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDPpantallaLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDPpantallaLayout.createSequentialGroup()
-                        .addGap(116, 116, 116)
+                        .addGap(114, 114, 114)
                         .addComponent(jBtareasPendientes)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jDPpantallaLayout.setVerticalGroup(
             jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,9 +87,9 @@ public class ListaDeTareas extends javax.swing.JFrame {
                 .addGroup(jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBcargarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
+                .addGap(32, 32, 32)
                 .addComponent(jBtareasPendientes)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
