@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class ListaDeTareas extends javax.swing.JFrame {
 
-    private static ArrayList<Tarea> tarea = new ArrayList<>();
+    public static ArrayList<Tarea> listaDetarea = new ArrayList<>();
     
     
     /**
@@ -136,6 +136,7 @@ public class ListaDeTareas extends javax.swing.JFrame {
         String nTarea = jTnuevaTarea.getText();
         
         Tarea tarea1 = new Tarea(nTarea);
+        listaDetarea.add(tarea1);
         
         JOptionPane.showMessageDialog(this, "Nueva Tarea Cargada");
         

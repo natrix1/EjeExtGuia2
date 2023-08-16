@@ -11,6 +11,8 @@ del proyecto y suben al repositorio los cambios.
  */
 package ejeextguia2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Altamirano
@@ -23,6 +25,8 @@ public class EjeExtGuia2 {
      */
     
     public static void main(String[] args) {
+        
+        
         
         ListaDeTareas list = new ListaDeTareas();
         
