@@ -21,7 +21,13 @@ public class EjeExtGuia2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        ListaDeTareas list = new ListaDeTareas();
+        
+        list.setVisible(true);
+        list.setLocationRelativeTo(null);
+        
+        
     }
     
 }
