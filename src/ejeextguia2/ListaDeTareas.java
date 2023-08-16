@@ -41,6 +41,11 @@ public class ListaDeTareas extends javax.swing.JFrame {
         jTnuevaTarea.setText("ingrese tarea nueva");
 
         jBtareasPendientes.setText("ver tareas pendientes");
+        jBtareasPendientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtareasPendientesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,6 +82,10 @@ public class ListaDeTareas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtareasPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtareasPendientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtareasPendientesActionPerformed
 
     /**
      * @param args the command line arguments

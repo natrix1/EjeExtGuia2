@@ -28,24 +28,30 @@ public class Tareas extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jListaTareas = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTablaTareas = new javax.swing.JTable();
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jListaTareas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jListaTareas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListaTareas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListaTareasMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jListaTareas);
 
         jLabel1.setText("tareas pendientes");
 
         jLabel2.setText("tareas terminadas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTablaTareas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -56,7 +62,7 @@ public class Tareas extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTablaTareas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,13 +104,17 @@ public class Tareas extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jListaTareasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaTareasMouseClicked
+        
+    }//GEN-LAST:event_jListaTareasMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jListaTareas;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTablaTareas;
     // End of variables declaration//GEN-END:variables
 }
