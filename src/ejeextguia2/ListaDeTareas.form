@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,65 +23,96 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" pref="108" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jBcargarTarea" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jTnuevaTarea" min="-2" pref="166" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                      <Component id="jBtareasPendientes" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jDPpantalla" pref="401" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBcargarTarea" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="jTnuevaTarea" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="jBtareasPendientes" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="123" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jDPpantalla" alignment="0" pref="306" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Container class="javax.swing.JDesktopPane" name="jDPpantalla">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Lista de tareas"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[700, 600]"/>
+        </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jBcargarTarea">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="cargar tarea"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTnuevaTarea">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ingrese tarea nueva"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jBtareasPendientes">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ver tareas pendientes"/>
-      </Properties>
-    </Component>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="jBcargarTarea" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="53" max="32767" attributes="0"/>
+                  <Component id="jTnuevaTarea" min="-2" pref="166" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="145" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                          <Component id="jBtareasPendientes" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTnuevaTarea" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBcargarTarea" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                  <Component id="jBtareasPendientes" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="107" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Lista de tareas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBcargarTarea">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="cargar tarea"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTnuevaTarea">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ingrese tarea nueva"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBtareasPendientes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ver tareas pendientes"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtareasPendientesActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
