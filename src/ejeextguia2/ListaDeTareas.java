@@ -5,12 +5,17 @@
  */
 package ejeextguia2;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Altamirano
  */
 public class ListaDeTareas extends javax.swing.JFrame {
 
+    private static ArrayList<Tarea> tarea = new ArrayList<>();
+    
     
     /**
      * Creates new form ListaDeTareas
@@ -44,6 +49,11 @@ public class ListaDeTareas extends javax.swing.JFrame {
         jLabel1.setText("Lista de tareas");
 
         jBcargarTarea.setText("cargar tarea");
+        jBcargarTarea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBcargarTareaActionPerformed(evt);
+            }
+        });
 
         jTnuevaTarea.setText("ingrese tarea nueva");
 
@@ -120,6 +130,18 @@ public class ListaDeTareas extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jBtareasPendientesActionPerformed
+
+    private void jBcargarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcargarTareaActionPerformed
+        
+        String nTarea = jTnuevaTarea.getText();
+        
+        Tarea tarea1 = new Tarea(nTarea);
+        
+        JOptionPane.showMessageDialog(this, "Nueva Tarea Cargada");
+        
+        jTnuevaTarea.setText("");
+                       
+    }//GEN-LAST:event_jBcargarTareaActionPerformed
   
 
 
@@ -130,4 +152,7 @@ public class ListaDeTareas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTnuevaTarea;
     // End of variables declaration//GEN-END:variables
+
+    
+
 }
