@@ -27,6 +27,7 @@ public class ListaDeTareas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDPpantalla = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jBcargarTarea = new javax.swing.JButton();
         jTnuevaTarea = new javax.swing.JTextField();
@@ -41,43 +42,55 @@ public class ListaDeTareas extends javax.swing.JFrame {
         jTnuevaTarea.setText("ingrese tarea nueva");
 
         jBtareasPendientes.setText("ver tareas pendientes");
-        jBtareasPendientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtareasPendientesActionPerformed(evt);
-            }
-        });
+
+        jDPpantalla.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDPpantalla.setLayer(jBcargarTarea, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDPpantalla.setLayer(jTnuevaTarea, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDPpantalla.setLayer(jBtareasPendientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jDPpantallaLayout = new javax.swing.GroupLayout(jDPpantalla);
+        jDPpantalla.setLayout(jDPpantallaLayout);
+        jDPpantallaLayout.setHorizontalGroup(
+            jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDPpantallaLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jBcargarTarea)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+            .addGroup(jDPpantallaLayout.createSequentialGroup()
+                .addGroup(jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDPpantallaLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDPpantallaLayout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jBtareasPendientes)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDPpantallaLayout.setVerticalGroup(
+            jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDPpantallaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addGroup(jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBcargarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(jBtareasPendientes)
+                .addGap(87, 87, 87))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBcargarTarea)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jBtareasPendientes)))
-                .addContainerGap(44, Short.MAX_VALUE))
+            .addComponent(jDPpantalla)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBcargarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addComponent(jBtareasPendientes)
-                .addContainerGap(123, Short.MAX_VALUE))
+            .addComponent(jDPpantalla)
         );
 
         pack();
@@ -87,7 +100,17 @@ public class ListaDeTareas extends javax.swing.JFrame {
     
 
     private void jBtareasPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtareasPendientesActionPerformed
-        // TODO add your handling code here:
+        
+        jDPpantalla.removeAll();
+        jDPpantalla.repaint();
+        
+        Tareas pantallaTarea = new Tareas();
+        
+        pantallaTarea.setVisible(true);
+        jDPpantalla.add(pantallaTarea);
+        jDPpantalla.moveToFront(pantallaTarea);
+        
+        
     }//GEN-LAST:event_jBtareasPendientesActionPerformed
   
 
@@ -95,6 +118,7 @@ public class ListaDeTareas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBcargarTarea;
     private javax.swing.JButton jBtareasPendientes;
+    private javax.swing.JDesktopPane jDPpantalla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTnuevaTarea;
     // End of variables declaration//GEN-END:variables
