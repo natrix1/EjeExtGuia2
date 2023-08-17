@@ -139,9 +139,9 @@ public class ListaDeTareas extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtareasPendientesActionPerformed
     
     
-    ////////////////////////
-    //// BOTON DE CARGA ////
-    ////////////////////////
+    //////////////////////
+    /// BOTON DE CARGA ///
+    //////////////////////
     private void jBcargarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcargarTareaActionPerformed
 
         String nTarea = jTnuevaTarea.getText();
