@@ -126,7 +126,8 @@ public class ListaDeTareas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     private void jBtareasPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtareasPendientesActionPerformed
 
         Tareas pantallaTarea = new Tareas();
@@ -136,7 +137,11 @@ public class ListaDeTareas extends javax.swing.JFrame {
         //jDPpantalla.moveToFront(pantallaTarea);
 
     }//GEN-LAST:event_jBtareasPendientesActionPerformed
-
+    
+    
+    ////////////////////////
+    //// BOTON DE CARGA ////
+    ////////////////////////
     private void jBcargarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcargarTareaActionPerformed
 
         String nTarea = jTnuevaTarea.getText();
