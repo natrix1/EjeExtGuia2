@@ -130,10 +130,10 @@ public class ListaDeTareas extends javax.swing.JFrame {
     
     private void jBtareasPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtareasPendientesActionPerformed
 
-        Tareas pantallaTarea = new Tareas();
+        Tareas pantallaTareas = new Tareas();
 
-        pantallaTarea.setVisible(true);
-        jPanel2.add(pantallaTarea);
+        pantallaTareas.setVisible(true);
+        jPanel2.add(pantallaTareas);
         //jDPpantalla.moveToFront(pantallaTarea);
 
     }//GEN-LAST:event_jBtareasPendientesActionPerformed

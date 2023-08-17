@@ -27,7 +27,7 @@ public class Tarea {
 
     @Override
     public String toString() {
-        return "Tarea Pendiente -" + nuevaTarea ;
+        return "" + nuevaTarea ;
     }
     
     

@@ -6,14 +6,18 @@
 package ejeextguia2;
 
 import static ejeextguia2.ListaDeTareas.listaDetarea;
+import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Altamirano
  */
 public class Tareas extends javax.swing.JInternalFrame {
-
+    
+    Date fecha = new Date();
+    DefaultTableModel modeloTabla = new DefaultTableModel();
     DefaultListModel modelo = new DefaultListModel();
     
     /**
@@ -23,6 +27,7 @@ public class Tareas extends javax.swing.JInternalFrame {
         
         initComponents();
         jList1.setModel(modelo);
+        armarCabezera();
         cargarLista();
         
     }
@@ -42,6 +47,7 @@ public class Tareas extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jbTareaFinalizada = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -79,6 +85,13 @@ public class Tareas extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
+        jbTareaFinalizada.setText("Finalizada");
+        jbTareaFinalizada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbTareaFinalizadaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,45 +104,64 @@ public class Tareas extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(118, 118, 118)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(130, 130, 130)
                                 .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 49, Short.MAX_VALUE)))
+                                .addGap(136, 136, 136)
+                                .addComponent(jLabel1)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbTareaFinalizada)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbTareaFinalizada))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jListaTareasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaTareasMouseClicked
+        
+        
         
     }//GEN-LAST:event_jListaTareasMouseClicked
 
+    
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         
         jList1.getSelectedValue();
         
-        
-        
+       
     }//GEN-LAST:event_jList1MouseClicked
+
+    
+    private void jbTareaFinalizadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTareaFinalizadaActionPerformed
+                 
+        for (Tarea t : listaDetarea) {
+            
+            modeloTabla.addRow(new Object[]{(jList1.getSelectedValue()),fecha});
+            
+        }
+        
+    }//GEN-LAST:event_jbTareaFinalizadaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -139,6 +171,7 @@ public class Tareas extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton jbTareaFinalizada;
     // End of variables declaration//GEN-END:variables
 
     private void cargarLista(){
@@ -150,5 +183,13 @@ public class Tareas extends javax.swing.JInternalFrame {
         }
         
     }
-
+    
+    private void armarCabezera(){
+        
+        modeloTabla.addColumn("Tarea");
+        modeloTabla.addColumn("Fecha");
+        
+        jTable1.setModel(modeloTabla);
+    }
+    
 }
