@@ -41,11 +41,10 @@ public class ListaDeTareas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new FondoPanel();
-        jDPpantalla = new javax.swing.JDesktopPane();
+        jBtareasPendientes = new javax.swing.JButton();
         jBcargarTarea = new javax.swing.JButton();
         jTnuevaTarea = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jBtareasPendientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 400));
@@ -53,7 +52,12 @@ public class ListaDeTareas extends javax.swing.JFrame {
         jPanel2.setOpaque(false);
         jPanel2.setPreferredSize(new java.awt.Dimension(500, 400));
 
-        jDPpantalla.setPreferredSize(new java.awt.Dimension(700, 600));
+        jBtareasPendientes.setText("ver tareas pendientes");
+        jBtareasPendientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtareasPendientesActionPerformed(evt);
+            }
+        });
 
         jBcargarTarea.setText("cargar tarea");
         jBcargarTarea.addActionListener(new java.awt.event.ActionListener() {
@@ -64,71 +68,42 @@ public class ListaDeTareas extends javax.swing.JFrame {
 
         jTnuevaTarea.setText("ingrese tarea nueva");
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 255, 153));
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(171, 228, 120));
         jLabel1.setText("Agenda");
         jLabel1.setToolTipText("");
-
-        jBtareasPendientes.setText("ver tareas pendientes");
-        jBtareasPendientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtareasPendientesActionPerformed(evt);
-            }
-        });
-
-        jDPpantalla.setLayer(jBcargarTarea, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDPpantalla.setLayer(jTnuevaTarea, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDPpantalla.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDPpantalla.setLayer(jBtareasPendientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDPpantallaLayout = new javax.swing.GroupLayout(jDPpantalla);
-        jDPpantalla.setLayout(jDPpantallaLayout);
-        jDPpantallaLayout.setHorizontalGroup(
-            jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDPpantallaLayout.createSequentialGroup()
-                .addGroup(jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDPpantallaLayout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jBtareasPendientes))
-                    .addGroup(jDPpantallaLayout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jDPpantallaLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jTnuevaTarea, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jBcargarTarea)
-                .addGap(67, 67, 67))
-        );
-        jDPpantallaLayout.setVerticalGroup(
-            jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDPpantallaLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jDPpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBcargarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
-                .addComponent(jBtareasPendientes)
-                .addContainerGap(118, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDPpantalla, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jBcargarTarea))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(175, 175, 175)
+                        .addComponent(jBtareasPendientes))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(jLabel1)))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDPpantalla, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTnuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBcargarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75)
+                .addComponent(jBtareasPendientes)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,40 +120,37 @@ public class ListaDeTareas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    
-
     private void jBtareasPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtareasPendientesActionPerformed
-               
-        
+
         Tareas pantallaTarea = new Tareas();
-        
+
         pantallaTarea.setVisible(true);
-        jDPpantalla.add(pantallaTarea);
-        jDPpantalla.moveToFront(pantallaTarea);
-        
-        
+        jPanel2.add(pantallaTarea);
+        //jDPpantalla.moveToFront(pantallaTarea);
+
     }//GEN-LAST:event_jBtareasPendientesActionPerformed
 
     private void jBcargarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcargarTareaActionPerformed
-        
+
         String nTarea = jTnuevaTarea.getText();
-        
+
         Tarea tarea1 = new Tarea(nTarea);
         listaDetarea.add(tarea1);
-        
+
         JOptionPane.showMessageDialog(this, "Nueva Tarea Cargada");
-        
+
         jTnuevaTarea.setText("");
-                       
+
     }//GEN-LAST:event_jBcargarTareaActionPerformed
+
+
+    
   
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBcargarTarea;
     private javax.swing.JButton jBtareasPendientes;
-    private javax.swing.JDesktopPane jDPpantalla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTnuevaTarea;
@@ -191,7 +163,7 @@ public class ListaDeTareas extends javax.swing.JFrame {
         @Override
         public void paint(Graphics g){
             
-            imagen = new ImageIcon(getClass().getResource("/imagenfondo/fondoMaderaGris.jpg")).getImage();
+            imagen = new ImageIcon(getClass().getResource("/imagenfondo/fondo1.jpg")).getImage();
             
             g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
             
