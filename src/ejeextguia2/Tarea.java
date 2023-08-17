@@ -24,6 +24,11 @@ public class Tarea {
     public void setNuevaTarea(String nuevaTarea) {
         this.nuevaTarea = nuevaTarea;
     }
+
+    @Override
+    public String toString() {
+        return "Tarea Pendiente -" + nuevaTarea ;
+    }
     
     
     

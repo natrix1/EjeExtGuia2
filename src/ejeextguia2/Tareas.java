@@ -5,6 +5,7 @@
  */
 package ejeextguia2;
 
+import static ejeextguia2.ListaDeTareas.listaDetarea;
 import javax.swing.DefaultListModel;
 
 /**
@@ -19,8 +20,10 @@ public class Tareas extends javax.swing.JInternalFrame {
      * Creates new form Tareas
      */
     public Tareas() {
+        
         initComponents();
         jList1.setModel(modelo);
+        cargarLista();
         
     }
 
@@ -140,9 +143,9 @@ public class Tareas extends javax.swing.JInternalFrame {
 
     private void cargarLista(){
         
-        for (Tarea t : ListaDeTareas.listaDetarea) {
+        for (int i = 0 ; i < listaDetarea.size(); i++) {
             
-            modelo.addElement(t);
+            modelo.addElement(listaDetarea.get(i));
             
         }
         
