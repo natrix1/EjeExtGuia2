@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -133,8 +134,11 @@ public class ListaDeTareas extends javax.swing.JFrame {
         Tareas pantallaTareas = new Tareas();
 
         pantallaTareas.setVisible(true);
+        jPanel2.removeAll();
+        jPanel2.repaint();
         jPanel2.add(pantallaTareas);
-        //jDPpantalla.moveToFront(pantallaTarea);
+        //jPanel2.repaint();
+        
 
     }//GEN-LAST:event_jBtareasPendientesActionPerformed
     
