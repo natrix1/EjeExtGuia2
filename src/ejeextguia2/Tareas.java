@@ -8,6 +8,8 @@ package ejeextguia2;
 import static ejeextguia2.ListaDeTareas.listaDetarea;
 import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -99,19 +101,18 @@ public class Tareas extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(130, 130, 130)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(136, 136, 136)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jbTareaFinalizada))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(139, 139, 139)
+                                .addComponent(jLabel2)))
+                        .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbTareaFinalizada)
-                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,9 +155,29 @@ public class Tareas extends javax.swing.JInternalFrame {
                  
         for (Tarea t : listaDetarea) {
             
-            modeloTabla.addRow(new Object[]{(jList1.getSelectedValue()),fecha});
+            if (jList1.getSelectedValue() == null) {
+                JOptionPane.showMessageDialog(this, "Antes debe selccionar una tarea");
+            } else {
+
+                modeloTabla.addRow(new Object[]{(jList1.getSelectedValue()), fecha});
+                modelo.removeElement(jList1.getSelectedValue());
+                
+            }
+        }
+        
+        ///////////////////////////////
+        //////// Corregir Rever ///////
+        //////////////////////////////
+        /*
+        if(JInternalFrame.EXIT_ON_CLOSE == 3){
+            
+            ListaDeTareas pantallaPrincipal = new ListaDeTareas();
+            pantallaPrincipal.repaint();
+            pantallaPrincipal.setVisible(true);
+            //jPanel2.repaint();
             
         }
+        */
         
     }//GEN-LAST:event_jbTareaFinalizadaActionPerformed
 
